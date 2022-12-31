@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+       
+        body {
+           
+            padding: 0px ;
+            margin: 0px ;            
+            background-image: url("background3.jpg");
+            width: 100%;
+            height: 100%;
+        }
+        .flex-container {
+            display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+        
+              }
+              .flex-container_results{
+          margin-left: 5px;
+          padding: 44px;
+      }
+
+        h1 {
+            color: white;
+            text-align: center;
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+        }
+        #label {
+            position: relative;
+            color: white;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Want-to-Go List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  
+ <div class="flex-container">
+
+    <% for(var i=0; i< list.length; i++){ 
+        
+        var location=list[i].location
+    
+        %>
+
+           <div class="flex-container_results"> <img id="image" src=<%=list[i].img %>   width="193" height="250">
+            <br>
+            <label id ="label" class="ml-4 my-2"><%=list[i].name%></label>
+            <br>
+            <button  onclick="gotolocation('<%= location%>')" id=list[i].location class="btn btn-secondary ml-3"> View </button> </div>
+            
+        <% } %>
+           </div>
+</body>
+</html>
+<script>
+function gotolocation(e){
+window.location=e
+}
+
+
+</script>
